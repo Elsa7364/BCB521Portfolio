@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "In this post, we’ll explore some simple R code examples.\n\n1 + 1\n\n[1] 2\n\n\n\n# Define x and y values\nx_values &lt;- c(1, 2, 3, 4, 5)\ny_values &lt;- c(1, 4, 9, 16, 25)\n# plotting\nplot(x_values, y_values, main = \"Simple Plot\")\n\n\n\n\n\nmy_data &lt;- data.frame(Name = c(\"Sam\", \"Anna\"), Age = c(25, 30), Occupation = c(\"Engineer\", \"Doctor\"))"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "PolitiData",
+    "section": "",
+    "text": "Hi, I’m Marwa. I’m into data and politics, and I’m here is where I make sense of them.\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "The Inside Scoop: Marwa Unplugged",
+    "section": "",
+    "text": "About this blog"
+  }
+]
