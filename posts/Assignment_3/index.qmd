@@ -1,0 +1,19 @@
+---
+title: "Assignment 3"
+author: "Marwa"
+date: "2023-09-07"
+categories: [Assignmnets, Data Describtion]
+---
+
+## Data Provinance
+
+
+This is where I will say things about the origins of the data 
+
+## Import the dataset
+
+```{r}
+youtube_data <- read.csv("Global YouTube Statistics.csv", header = TRUE)
+head(youtube_data)
+```
+
