@@ -2,7 +2,7 @@
 title: "Assignment 3"
 author: "Marwa"
 date: "2023-09-07"
-categories: [Assignmnets, Data Describtion]
+categories: [Assignmnets, Data Description]
 ---
 
 ## Data Provinance

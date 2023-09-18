@@ -9,7 +9,7 @@
 <meta name="author" content="Marwa">
 <meta name="dcterms.date" content="2023-09-07">
 
-<title>BCB521Portfolio - Assignment 3</title>
+<title>BCB521Portfolio - Post With Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,10 +142,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Assignment 3</h1>
+      <h1 class="title">Post With Code</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Assignmnets</div>
-                <div class="quarto-category">Data Description</div>
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
               </div>
                   </div>
   </div>
@@ -181,77 +182,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="data-provinance" class="level2">
-<h2 class="anchored" data-anchor-id="data-provinance">Data Provinance</h2>
-<p>This is where I will say things about the origins of the data</p>
-</section>
-<section id="import-the-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="import-the-dataset">Import the dataset</h2>
+<p>In this post, we’ll explore some simple R code examples.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>youtube_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Global YouTube Statistics.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(youtube_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  rank                   Youtuber subscribers  video.views         category
-1    1                   T-Series   245000000 228000000000            Music
-2    2             YouTube Movies   170000000            0 Film &amp; Animation
-3    3                    MrBeast   166000000  28368841870    Entertainment
-4    4 Cocomelon - Nursery Rhymes   162000000 164000000000        Education
-5    5                  SET India   159000000 148000000000            Shows
-6    6                      Music   119000000            0              nan
-                       Title uploads       Country Abbreviation  channel_type
-1                   T-Series   20082         India           IN         Music
-2              youtubemovies       1 United States           US         Games
-3                    MrBeast     741 United States           US Entertainment
-4 Cocomelon - Nursery Rhymes     966 United States           US     Education
-5                  SET India  116536         India           IN Entertainment
-6                      Music       0           nan          nan         Music
-  video_views_rank country_rank channel_type_rank
-1                1            1                 1
-2          4055159         7670              7423
-3               48            1                 1
-4                2            2                 1
-5                3            2                 2
-6          4057944          NaN               NaN
-  video_views_for_the_last_30_days lowest_monthly_earnings
-1                        2.258e+09                  564600
-2                        1.200e+01                       0
-3                        1.348e+09                  337000
-4                        1.975e+09                  493800
-5                        1.824e+09                  455900
-6                              NaN                       0
-  highest_monthly_earnings lowest_yearly_earnings highest_yearly_earnings
-1                  9.0e+06                6.8e+06               1.084e+08
-2                  5.0e-02                4.0e-02               5.800e-01
-3                  5.4e+06                4.0e+06               6.470e+07
-4                  7.9e+06                5.9e+06               9.480e+07
-5                  7.3e+06                5.5e+06               8.750e+07
-6                  0.0e+00                0.0e+00               0.000e+00
-  subscribers_for_last_30_days created_year created_month created_date
-1                        2e+06         2006           Mar           13
-2                          NaN         2006           Mar            5
-3                        8e+06         2012           Feb           20
-4                        1e+06         2006           Sep            1
-5                        1e+06         2006           Sep           20
-6                          NaN         2013           Sep           24
-  Gross.tertiary.education.enrollment.... Population Unemployment.rate
-1                                    28.1 1366417754              5.36
-2                                    88.2  328239523             14.70
-3                                    88.2  328239523             14.70
-4                                    88.2  328239523             14.70
-5                                    28.1 1366417754              5.36
-6                                     NaN        NaN               NaN
-  Urban_population Latitude Longitude
-1        471031528 20.59368  78.96288
-2        270663028 37.09024 -95.71289
-3        270663028 37.09024 -95.71289
-4        270663028 37.09024 -95.71289
-5        471031528 20.59368  78.96288
-6              NaN      NaN       NaN</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define x and y values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_values, y_values, <span class="at">main =</span> <span class="st">"Simple Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Post_with_code_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"Sam"</span>, <span class="st">"Anna"</span>), <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>), <span class="at">Occupation =</span> <span class="fu">c</span>(<span class="st">"Engineer"</span>, <span class="st">"Doctor"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

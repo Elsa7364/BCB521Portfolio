@@ -1,0 +1,16 @@
+{
+  "hash": "f2ab4875a65191e4b866dac9577ae1c8",
+  "result": {
+    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Marwa\"\ndate: \"2023-09-07\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\nIn this post, we'll explore some simple R code examples.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# Define x and y values\nx_values <- c(1, 2, 3, 4, 5)\ny_values <- c(1, 4, 9, 16, 25)\n# plotting\nplot(x_values, y_values, main = \"Simple Plot\")\n```\n\n::: {.cell-output-display}\n![](Post_with_code_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nmy_data <- data.frame(Name = c(\"Sam\", \"Anna\"), Age = c(25, 30), Occupation = c(\"Engineer\", \"Doctor\"))\n```\n:::\n",
+    "supporting": [
+      "Post_with_code_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
