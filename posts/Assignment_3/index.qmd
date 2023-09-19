@@ -1,19 +1,213 @@
 ---
 title: "Assignment 3"
 author: "Marwa"
-date: "2023-09-07"
-categories: [Assignmnets, Data Description]
+date: "2023-09-17"
+categories: [Assignments, Data Description]
 ---
 
-## Data Provinance
+### 1. Data Identification and Justification
 
+Dataset Chosen: Global YouTube Statistics 2023, from Kaggle
 
-This is where I will say things about the origins of the data 
+The dataset offers a detailed look at successful YouTube channels, tracking metrics like subscribers, views, and earnings. It's great for studying issues in online media, like how a channel's age impacts its follower count or if its earnings are linked to its home country's unemployment rate.
 
-## Import the dataset
+Research Questions:
+
+-   Does the unemployment rate in a country correlate with the earnings of YouTube channels originating from that area?
+
+-   How is the rate of college enrollment in a country connected to the types of popular YouTube channels from that place?
+
+-   Is there a link between how urbanized a country is and the number of views its YouTube channels get?
+
+Hypotheses:
+
+H1: There is a significant correlation between a country's 'Unemployment.rate' and the 'highest_yearly_earnings' of YouTube channels based in that country.
+
+H2: Countries with higher 'Gross.tertiary.education.enrollment' rates will have more popular YouTube channels in the 'Education' category.
+
+H3: YouTube channels from countries with higher 'Urban_population' rates will have higher 'video_views'.
+
+### 2. Data Import and Preliminary Analysis
+
+#### Import the dataset
 
 ```{r}
 youtube_data <- read.csv("Global YouTube Statistics.csv", header = TRUE)
 head(youtube_data)
 ```
 
+#### Basic EDA
+
+Summary stats to get mean, median, min, max, and quartiles. Dim function to check the number of rows and columns. Str to understand the structure of the data. And using the sum function to check for missing values.
+
+```{r}
+summary(youtube_data)
+dim(youtube_data)
+str(youtube_data)
+sum(is.na(youtube_data))
+
+```
+
+##### Some Data Visualization
+
+Scatter plot for 'Unemployment.rate' and 'highest_yearly_earnings'
+
+```{r}
+
+
+library(ggplot2)
+ggplot(youtube_data, aes(x = Unemployment.rate, y = highest_yearly_earnings)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  ggtitle("Correlation Between Unemployment Rate and Highest Yearly Earnings") +
+  xlab("Unemployment Rate") +
+  ylab("Highest Yearly Earnings")
+
+```
+
+Heatmap for 'Gross.tertiary.education.enrollment....' and 'category'
+
+```{r}
+education_category <- table(youtube_data$Gross.tertiary.education.enrollment, youtube_data$category)
+heatmap(as.matrix(education_category))
+
+```
+
+Scatter plot for 'Urban_population' and 'video.views'
+
+```{r}
+ggplot(youtube_data, aes(x = Urban_population, y = video.views)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  ggtitle("Correlation Between Urban Population and Video Views") +
+  xlab("Urban Population") +
+  ylab("Video Views")
+
+```
+
+**Preliminary Insights** Based on the summary, what stood out to me is that the 'created_year' for the channel named 'YouTube' shows 1970, even though YouTube was founded in 2005. This could be a placeholder or error. Since it's an isolated case, it's unlikely to significantly impact the overall analysis, but it should be acknowledged.
+
+Also, the median of 17,700,000 in 'subscribers' suggests that half of the YouTubers have fewer subscribers than this number.
+
+Earnings display huge variability, ranging from zero to 16.34 million, which could be an intriguing focus for analysis.
+
+There are 1291 missing values found across various variables in the dataset. This could affect the reliability of running any analyses or models.
+
+**Immediate Steps:**
+
+1.  Address missing data issues.
+
+```{r}
+#Bar chart for missing values
+missing_values <- sapply(youtube_data, function(x) sum(is.na(x)))
+barplot(missing_values, main = "Missing Values by Variable", xlab = "Variables", ylab = "Number of Missing Values")
+
+```
+
+2.  Consider normalizing variables with large ranges for easier comparison.
+
+```{r}
+#Box plot for 'video.views', 'subscribers', and 'highest_yearly_earnings' (Before normalization)
+library(reshape2)
+library(tidyr)
+ggplot(gather(youtube_data, variable, value, video.views, subscribers, highest_yearly_earnings), aes(x = variable, y = value)) +
+  geom_boxplot() +
+  ggtitle("Boxplot Before Normalization")
+
+```
+
+3.  Investigate outliers, particularly in video views, subscribers, and earnings.
+
+```{r}
+#Outlier plot (for 'video.views')
+ggplot(youtube_data, aes(x = "", y = video.views)) +
+  geom_boxplot() +
+  ggtitle("Outliers in Video Views") +
+  ylab("Video Views")
+
+#Outliers plot (for subscribers)
+ggplot(youtube_data, aes(x = "", y = subscribers)) +
+  geom_boxplot() +
+  ggtitle("Outliers in Subscribers") +
+  ylab("Subscribers")
+
+#Outliers plot (for earnings)
+# Outliers plot (for highest_yearly_earnings)
+ggplot(youtube_data, aes(x = "", y = highest_yearly_earnings)) +
+  geom_boxplot() +
+  ggtitle("Outliers in Highest Yearly Earnings") +
+  ylab("Highest Yearly Earnings")
+
+```
+
+### 3. Data Description
+
+#### Data Provenance
+
+The dataset comes from multiple data sources, it was downloaded from Kaggle.
+
+#### Data Collection
+
+The data was gathered using Python, indicating that it was likely automated, potentially through application programming interface (API) which means the data was likely fetched directly from YouTube's own set of APIs.
+
+#### Data Dictionary
+
+• rank: Position of the YouTube channel based on the number of subscribers
+
+• Youtuber: Name of the YouTube channel
+
+• subscribers: Number of subscribers to the channel
+
+• video views: Total views across all videos on the channel
+
+• category: Category or niche of the channel
+
+• Title: Title of the YouTube channel
+
+• uploads: Total number of videos uploaded on the channel
+
+• Country: Country where the YouTube channel originates
+
+• Abbreviation: Abbreviation of the country
+
+• channel_type: Type of the YouTube channel (e.g., individual, brand)
+
+• video_views_rank: Ranking of the channel based on total video views
+
+• country_rank: Ranking of the channel based on the number of subscribers within its country
+
+• channel_type_rank: Ranking of the channel based on its type (individual or brand)
+
+• video_views_for_the_last_30_days: Total video views in the last 30 days
+
+• lowest_monthly_earnings: Lowest estimated monthly earnings from the channel
+
+• highest_monthly_earnings: Highest estimated monthly earnings from the channel
+
+• lowest_yearly_earnings: Lowest estimated yearly earnings from the channel
+
+• highest_yearly_earnings: Highest estimated yearly earnings from the channel
+
+• subscribers_for_last_30_days: Number of new subscribers gained in the last 30 days
+
+• created_year: Year when the YouTube channel was created
+
+• created_month: Month when the YouTube channel was created
+
+• created_date: Exact date of the YouTube channel's creation
+
+• Gross tertiary education enrollment (%): Percentage of the population enrolled in tertiary education in the country
+
+• Population: Total population of the country
+
+• Unemployment rate: Unemployment rate in the country
+
+• Urban_population: Percentage of the population living in urban areas
+
+• Latitude: Latitude coordinate of the country's location
+
+• Longitude: Longitude coordinate of the country's location
+
+### 4. Next Steps
+
+To make the dataset more reliable, I'll either fill in or get rid of any missing values. For numbers that span a wide range, I'll use some standardizing methods to make them easier to compare. I'll also take care of any extreme values, or outliers, so they don't throw off our analysis. And to make sure our findings are solid, I'll set a specific siginificance level acting as a "passing grade" for our hypothesis tests. Then there will be advanced visualizations and interpretation.
