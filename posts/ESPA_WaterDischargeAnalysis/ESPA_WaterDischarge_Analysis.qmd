@@ -1,0 +1,102 @@
+---
+title: "ESPA Water Discharge Analysis"
+author: "Marwa Elsayed"
+date: "2023-09-28"
+output: 
+  html_document:
+    theme: "default"
+    code_folding: "hide"
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Data Identification and Justification
+
+### Source Information
+
+The data for this analysis comes from the Eastern Snake Plain Aquifer (ESPA) Model. The dataset is available on the Idaho Department of Water Resources (IDWR) portal [here](https://idwr.hub.arcgis.com/datasets/372c8a1beb7e42688fe6caf8ed519ea1_0/about)
+
+### Dataset Summary
+
+The ESPA Model cells are used to simulate aquifer discharge flow in ESPA. The aquifer discharges water when it reaches user-specified heights. This dataset plays an important role in water management decisions in the region.
+
+### The Core Argument
+
+In the ESPA, model cells control water discharge when they reach specified elevation levels, a crucial element for effective water management. However, the raw data does not show how the cell size, represented by ShapeSTArea, impacts these elevation thresholds for discharge. Therefore, by analyzing a scatter plot of elevation (Elev) against cell size (ShapeSTArea), we may uncover patterns that could help in spatially optimizing water discharge zones to maximize efficiency and minimize environmental impact.
+
+This would be based on the premise that different cell sizes might be more or less efficient in facilitating water discharge at specific elevations, so having implications for resource allocation and environmental sustainability.
+
+### Data Dictionary
+
+This section provides an overview of the variables in the ESPA Model dataset.
+
+-   **OBJECTID:** Order number automatically generated for each model cell.
+
+-   **Layer**: Identifies the layer of the model cell in the aquifer.
+
+-   **Row**: Indicates the row position of the model cell in the grid.
+
+-   **Col**: Denotes the column position of the model cell in the grid.
+
+-   **Elev**: Represents the elevation level at which water discharges from the aquifer.
+
+-   **Cell_Int**: An identifier for each model cell.
+
+-   **Drain**: Describe the type of drain associated with the model cell, if applicable.
+
+-   **Cond**: Specifies the conductivity of the cell, related to how easily water flows through it.
+
+-   **Name**: The name of the model cell.
+
+-   **GroupAB**: A categorization attribute for the model cells.
+
+-   **Reach**: Represents the extent of model cells within the aquifer.
+
+-   **ShapeSTArea**: The spatial size or area of the model cell.
+
+-   **ShapeSTLength**: The perimeter or the spatial length of the model cell.
+
+### Data Import and Preliminary Analysis
+
+```{r}
+aquifer_data <- read.csv("C:/BCB 521/Datasets/ESPA/Eastern_Snake_Plain_Aquifer_Model_Spring_Cells.csv")
+```
+
+#### Data Exploration:
+
+In this section, we will explore specific variables that are important to our analysis:
+
+-   **Elev**: Elevation levels are a key factor in initiating water discharge.
+
+-   **ShapeSTArea:** This would be important as the size would impact the elevation at which water discharges.
+
+### Data Cleaning
+
+```{r}
+# Drop unnecessary columns
+filtered_data <- aquifer_data[, c("Elev", "ShapeSTArea")]
+
+# Remove any rows with missing values
+clean_data <- na.omit(filtered_data)
+
+```
+
+### Basic EDA
+
+```{r}
+
+summary_stats_elev <- summary(clean_data$Elev)
+summary_stats_area <- summary(clean_data$ShapeSTArea)
+
+```
+
+### Visualization
+
+Scatterplot to see the relationship between elevation and the spatial size or the cells
+
+```{r}
+
+plot(clean_data$Elev, clean_data$ShapeSTArea, xlab="Elevation (Elev)", ylab="Cell Size (ShapeSTArea)")
+
+
+```
