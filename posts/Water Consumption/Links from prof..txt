@@ -1,0 +1,12 @@
+
+How to Create State and County Maps Easily in R
+
+https://urban-institute.medium.com/how-to-create-state-and-county-maps-easily-in-r-577d29300bb2
+
+ggside: A new R package for plotting distributions in side-plots
+
+https://www.business-science.io/code-tools/2021/05/18/marginal_distributions.html
+
+
+2021 income data
+https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/

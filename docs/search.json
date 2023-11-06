@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "Marwa’s Data: BCB521Portfolio",
     "section": "",
-    "text": "Wateromics 2015\n\n\n\n\n\n\n\nAssignments\n\n\nData Description\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2023\n\n\nMarwa Elsayed\n\n\n\n\n\n\n  \n\n\n\n\nESPA Water Discharge Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2023\n\n\nMarwa Elsayed\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 3\n\n\n\n\n\n\n\nAssignments\n\n\nData Description\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2023\n\n\nMarwa\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 7, 2023\n\n\nMarwa\n\n\n\n\n\n\n  \n\n\n\n\nPolitiData\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2023\n\n\nMarwa\n\n\n\n\n\n\nNo matching items"
+    "text": "Wateromics 2015 - Storyboard\n\n\n\n\n\n\n\nAssignments\n\n\nData Description\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2023\n\n\nMarwa Elsayed\n\n\n\n\n\n\n  \n\n\n\n\nESPA Water Discharge Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2023\n\n\nMarwa Elsayed\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 3\n\n\n\n\n\n\n\nAssignments\n\n\nData Description\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2023\n\n\nMarwa\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 7, 2023\n\n\nMarwa\n\n\n\n\n\n\n  \n\n\n\n\nPolitiData\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2023\n\n\nMarwa\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/ESPA_WaterDischargeAnalysis/ESPA_WaterDischarge_Analysis.html",
@@ -96,5 +96,103 @@
     "title": "Wateromics 2015",
     "section": "Graphs",
     "text": "Graphs"
+  },
+  {
+    "objectID": "Storyboard_v1.html",
+    "href": "Storyboard_v1.html",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "",
+    "text": "Water is an essential resource that underpins all aspects of human and environmental systems. Given the diversity of water usage across different sectors, it is important to understand the patterns and determinants of water consumption to ensure sustainable management.\nThis post examines how water use per capita relates to household income in the U.S. during 2015, focusing on domestic use and briefly exploring other sectors in water use as well. The question: How is per capita water use in the domestic sector associated with median household income across U.S. counties in 2015?"
+  },
+  {
+    "objectID": "Storyboard_v1.html#introduction-and-research-question",
+    "href": "Storyboard_v1.html#introduction-and-research-question",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "",
+    "text": "Water is an essential resource that underpins all aspects of human and environmental systems. Given the diversity of water usage across different sectors, it is important to understand the patterns and determinants of water consumption to ensure sustainable management.\nThis post examines how water use per capita relates to household income in the U.S. during 2015, focusing on domestic use and briefly exploring other sectors in water use as well. The question: How is per capita water use in the domestic sector associated with median household income across U.S. counties in 2015?"
+  },
+  {
+    "objectID": "Storyboard_v1.html#data-sources",
+    "href": "Storyboard_v1.html#data-sources",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "Data Sources",
+    "text": "Data Sources\nFor water data, here\nFor income data, Census Data on Income and Poverty. I chose the American Community Survey 5-year estimates for the analysis as the 5-year estimate gives more reliable data for all US counties, unlike the 1-year estimate as they provide the most current data but have a smaller sample size."
+  },
+  {
+    "objectID": "Storyboard_v1.html#data-cleaning-summary",
+    "href": "Storyboard_v1.html#data-cleaning-summary",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "Data Cleaning Summary",
+    "text": "Data Cleaning Summary\n\nImported the two datasets without turning text into factors, making it easier to work with text.\nStandardized FIPS codes to five digits for consistent merging.\nChanged median income data from text to numbers and averaged the upper and lower bounds for a clear income value.\nChose only the necessary columns and renamed them for better understanding and use.\nCleaned up geographic data by detaching state names from county names and fixing FIPS code formats.\nCombined the income and water usage data based on FIPS code for a county-level comparison.\n\nSome issues encountered, such as:\n\nDifferent formats for FIPS codes, which we fixed by changing all to integer format."
+  },
+  {
+    "objectID": "Storyboard_v1.html#methodology",
+    "href": "Storyboard_v1.html#methodology",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "Methodology",
+    "text": "Methodology\n\nWateruse:\n\nCheck the data for accuracy and then analyze whether household income is related to how much water individual use for domestic use and other sectors.\nUsing scatter plots and column plots to visually explore relationships between median household income and water use in domestic, industrial, and irrigation sectors.\nGenerated stacked column plots to display the per capita consumption across the different sectors, providing a comparative perspective of water use.\nMake the data less skewed and easier to understand, especially on the maps, we transformed the figures using a logarithmic scale.\n\n\n\nChoropleth Map Creation:\n\nDeveloped choropleth maps to geographically represent domestic water use on a county level, using log transformation for data normalization and better visual clarity and another map to visualize household median income.\nThe maps serve to illustrate the spatial distribution of water consumption in relation to median household income across U.S. counties."
+  },
+  {
+    "objectID": "Storyboard_v1.html#initial-findings",
+    "href": "Storyboard_v1.html#initial-findings",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "Initial Findings",
+    "text": "Initial Findings\nThe relationship between median income and other sectors has not been clearly established. For example, in examining the scatterplot of median income against domestic total self-supplied water use across U.S. counties, the data distribution lacks a linear pattern, suggesting that higher income does not necessarily correspond with greater domestic water usage.\n\nThe following scatterplot indicates there’s a clear upward trend showing that as population size increases, water use also goes up. This is shown in the way the data points line up in a straight line pattern, which is also highlighted by the blue line drawn through the data.\n\n\nAlthough a strong relationship between the variables has not been established, the following two plots offer a visual comparison, allowing a chance to see the geographic distribution of both domestic total use and household median income.\n\n\n\nObservations based on the maps\n\nThe water use map displays a wide range of differences among counties, with certain areas showing much higher or lower use than others. In contrast, the median income appears to be more evenly spread out over larger regions without such distinct variations.\nDespite no clear linear relationships in the previous scatterplots, certain regions, especially in the Northeast and parts of the West Coast, show a pattern where higher water use aligns with higher median incomes. This might mean that wealthier areas have greater water consumption, possibly because of larger homes or more water-demanding lifestyles. On the other hand, central areas of the country tend to have both lower water use and lower median incomes, which could relate to factors like less dense populations, different types of jobs, and varying access to water resources.\nIt is worth noting that the water use map uses quantiles, meaning it groups counties into categories that each contain the same number of places, which makes it easier to see relative high and low water use areas. The income map, using a continuous scale, reflects the actual income levels as they are, showing a more subtle and detailed picture. This approach for income might offer a deeper insight but could also make it harder to quickly identify where incomes differ greatly."
+  },
+  {
+    "objectID": "Storyboard_v1.html#limitations",
+    "href": "Storyboard_v1.html#limitations",
+    "title": "Correlation of Water Consumption and Income Across U.S. Counties in 2015",
+    "section": "Limitations",
+    "text": "Limitations\n\nThe data includes a variety of areas like cities, countryside, and industrial zones, which might use water differently, regardless of income levels.\nThere’s a wide span of incomes, and there doesn’t seem to be a clear water use trend for the wealthier or less wealthy areas.\nThere could be other variables not included in the analysis that more significantly affect total water use, such as agricultural policies, the presence of water-saving technologies, or weather patterns."
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html",
+    "href": "posts/Storyboard/Storyboard_v1.html",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "",
+    "text": "Water is an essential resource that underpins all aspects of human and environmental systems. Given the diversity of water usage across different sectors, it is important to understand the patterns and determinants of water consumption to ensure sustainable management.\nThis post examines how water use per capita relates to household income in the U.S. during 2015, focusing on domestic use and briefly exploring other sectors in water use as well. The question: How is per capita water use in the domestic sector associated with median household income across U.S. counties in 2015?"
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#introduction-and-research-question",
+    "href": "posts/Storyboard/Storyboard_v1.html#introduction-and-research-question",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "",
+    "text": "Water is an essential resource that underpins all aspects of human and environmental systems. Given the diversity of water usage across different sectors, it is important to understand the patterns and determinants of water consumption to ensure sustainable management.\nThis post examines how water use per capita relates to household income in the U.S. during 2015, focusing on domestic use and briefly exploring other sectors in water use as well. The question: How is per capita water use in the domestic sector associated with median household income across U.S. counties in 2015?"
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#data-sources",
+    "href": "posts/Storyboard/Storyboard_v1.html#data-sources",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "Data Sources",
+    "text": "Data Sources\nFor water data, here\nFor income data, Census Data on Income and Poverty. I chose the American Community Survey 5-year estimates for the analysis as the 5-year estimate gives more reliable data for all US counties, unlike the 1-year estimate as they provide the most current data but have a smaller sample size."
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#data-cleaning-summary",
+    "href": "posts/Storyboard/Storyboard_v1.html#data-cleaning-summary",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "Data Cleaning Summary",
+    "text": "Data Cleaning Summary\n\nImported the two datasets without turning text into factors, making it easier to work with text.\nStandardized FIPS codes to five digits for consistent merging.\nChanged median income data from text to numbers and averaged the upper and lower bounds for a clear income value.\nChose only the necessary columns and renamed them for better understanding and use.\nCleaned up geographic data by detaching state names from county names and fixing FIPS code formats.\nCombined the income and water usage data based on FIPS code for a county-level comparison.\n\nSome issues encountered, such as:\n\nDifferent formats for FIPS codes, which we fixed by changing all to integer format."
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#methodology",
+    "href": "posts/Storyboard/Storyboard_v1.html#methodology",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "Methodology",
+    "text": "Methodology\n\nWateruse:\n\nCheck the data for accuracy and then analyze whether household income is related to how much water individual use for domestic use and other sectors.\nUsing scatter plots and column plots to visually explore relationships between median household income and water use in domestic, industrial, and irrigation sectors.\nGenerated stacked column plots to display the per capita consumption across the different sectors, providing a comparative perspective of water use.\nMake the data less skewed and easier to understand, especially on the maps, we transformed the figures using a logarithmic scale.\n\n\n\nChoropleth Map Creation:\n\nDeveloped choropleth maps to geographically represent domestic water use on a county level, using log transformation for data normalization and better visual clarity and another map to visualize household median income.\nThe maps serve to illustrate the spatial distribution of water consumption in relation to median household income across U.S. counties."
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#initial-findings",
+    "href": "posts/Storyboard/Storyboard_v1.html#initial-findings",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "Initial Findings",
+    "text": "Initial Findings\nThe relationship between median income and other sectors has not been clearly established. For example, in examining the scatterplot of median income against domestic total self-supplied water use across U.S. counties, the data distribution lacks a linear pattern, suggesting that higher income does not necessarily correspond with greater domestic water usage.\n\nThis scatterplot indicates there’s a clear upward trend showing that as population size increases, water use also goes up. This is shown in the way the data points line up in a straight line pattern, which is also highlighted by the blue line drawn through the data.\n\nAlthough a strong relationship between the variables has not been established, the following two plots offer a visual comparison, allowing a chance to see the geographic distribution of both domestic total use and household median income.\n\n\n\n\n\n\n\n\n\n\n\nObservations based on the maps\n\nThe water use map displays a wide range of differences among counties, with certain areas showing much higher or lower use than others. In contrast, the median income appears to be more evenly spread out over larger regions without such distinct variations.\nDespite no clear linear relationships in the previous scatterplots, certain regions, especially in the Northeast and parts of the West Coast, show a pattern where higher water use aligns with higher median incomes. This might mean that wealthier areas have greater water consumption, possibly because of larger homes or more water-demanding lifestyles. On the other hand, central areas of the country tend to have both lower water use and lower median incomes, which could relate to factors like less dense populations, different types of jobs, and varying access to water resources.\nIt is worth noting that the water use map uses quantiles, meaning it groups counties into categories that each contain the same number of places, which makes it easier to see relative high and low water use areas. The income map, using a continuous scale, reflects the actual income levels as they are, showing a more subtle and detailed picture. This approach for income might offer a deeper insight but could also make it harder to quickly identify where incomes differ greatly."
+  },
+  {
+    "objectID": "posts/Storyboard/Storyboard_v1.html#limitations",
+    "href": "posts/Storyboard/Storyboard_v1.html#limitations",
+    "title": "Wateromics 2015 - Storyboard",
+    "section": "Limitations",
+    "text": "Limitations\n\nThe data includes a variety of areas like cities, countryside, and industrial zones, which might use water differently, regardless of income levels.\nThere’s a wide span of incomes, and there doesn’t seem to be a clear water use trend for the wealthier or less wealthy areas.\nThere could be other variables not included in the analysis that more significantly affect total water use, such as agricultural policies, the presence of water-saving technologies, or weather patterns."
   }
 ]
